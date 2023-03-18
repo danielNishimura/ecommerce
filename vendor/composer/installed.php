@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'danielnishimura/ecommerce',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => NULL,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '08cf268dab23d08a4f01a95ee713e6c354c6423f',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'danielnishimura/ecommerce' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => NULL,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '08cf268dab23d08a4f01a95ee713e6c354c6423f',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
