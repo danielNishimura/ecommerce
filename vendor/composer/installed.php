@@ -3,7 +3,7 @@
         'name' => 'danielnishimura/ecommerce',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '08cf268dab23d08a4f01a95ee713e6c354c6423f',
+        'reference' => '72dcf2f1ca6e089132a2178dc5aaafb4e6490d19',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'danielnishimura/ecommerce' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '08cf268dab23d08a4f01a95ee713e6c354c6423f',
+            'reference' => '72dcf2f1ca6e089132a2178dc5aaafb4e6490d19',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
