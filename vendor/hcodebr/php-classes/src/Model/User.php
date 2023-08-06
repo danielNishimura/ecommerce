@@ -157,11 +157,13 @@ class User extends Model {
             if (count($results2) === 0 ) {
 
                 throw new \Exception("Não foi possível recuperar a senha");
+
             } else {
 
                 $dataRecovery = $results2[0];
 
                 $code = openssl_encrypt($dataRecovery['idrecovery'], 'AES-128-CBC', pack("a16", User::SECRET), 0, pack("a16", User::SECRET_IV));
+                #$code = base64_encode(openssl_encrypt(rijndael-128, User::SECRET, $dataRecovery["idrecovery"], ecb));
 
 				$code = base64_encode($code);
 
@@ -181,8 +183,8 @@ class User extends Model {
 				));			
 
                 $mailer->send();
-
-                return $link;
+                return $data;    
+                #return $link;
 
             }
         }
