@@ -10,14 +10,10 @@ class User extends Model {
 
     const SESSION = "User";
     const SECRET = "HcodePhp7_Secret";
-    //const SECRET_IV = "HcodePhp7_Secret_IV";
-	//const ERROR = "UserError";
-	//const ERROR_REGISTER = "UserErrorRegister";
-	//const SUCCESS = "UserSucesss";
 
     public static function getFromSession() {
 
-        $user - new User();
+        $user = new User();
 
         if (isset($_SESSION[User::SESSION]) && (int)$_SESSION[User::SESSION]['iduser'] > 0 ) {
 
