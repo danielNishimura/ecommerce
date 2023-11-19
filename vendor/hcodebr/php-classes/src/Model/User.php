@@ -12,6 +12,7 @@ class User extends Model {
     const SECRET = "HcodePhp7_Secret";
     const ERROR = "UserError";
     const ERROR_REGISTER = "UserErrorRegister";
+    const SUCCESS = "UserSuccess";
 
     public static function getFromSession() {
 
@@ -286,6 +287,7 @@ class User extends Model {
         ));
     }
 
+    /** MSG ERROR */
     public static function setError($msg)
     {
         $_SESSION[User::ERROR] = $msg;
@@ -305,6 +307,27 @@ class User extends Model {
         $_SESSION[User::ERROR] = NULL;
     }
 
+    /** MSG SUCCESS */
+    public static function setSuccess($msg)
+    {
+        $_SESSION[User::SUCCESS] = $msg;
+    }
+
+    public static function getSuccess()
+    {
+        $msg = (isset($_SESSION[User::SUCCESS]) && $_SESSION[User::SUCCESS]) ? $_SESSION[User::ERROR] : '';
+
+        User::clearSuccess();
+
+        return $msg;
+    }
+
+    public static function clearSuccess()
+    {
+        $_SESSION[User::SUCCESS] = NULL;
+    }
+
+    /** ERROR REGISTER */
     public static function setErrorRegister($msg)
     {
         $_SESSION[User::ERROR_REGISTER] = $msg;
@@ -342,6 +365,16 @@ class User extends Model {
         ]);
     }
 
+    public function getOrders() {
+
+        $sql = new Sql();
+
+        $results = $sql->select("SELECT * FROM tb_orders a INNER JOIN tb_ordersstatus b USING(idstatus) INNER JOIN tb_carts c USING(idcart) INNER JOIN tb_users d ON d.iduser = a.iduser INNER JOIN tb_addresses e USING(idaddress) INNER JOIN tb_persons f ON f.iderson = d.idperson WHERE a.iduser = :iduser", [
+            ':iduser'=>$this->getisuser()
+        ]);
+
+        return $results;
+    }
 }
 
 ?>;
